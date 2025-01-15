@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class AnalyticsEventTrackerMock: AnalyticsEventTracking, @unchecked Sendable {
+public actor AnalyticsEventTrackerMock: @preconcurrency AnalyticsEventTracking {
 
    public var trackedEvents = [AnalyticsEvent]()
 

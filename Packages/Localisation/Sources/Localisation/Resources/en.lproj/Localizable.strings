@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Localisation
+
+  Created by Eslam on 15/01/2025.
+  
+*/
+
+// TabBar
+"ms_tabbar_home_title" = "Home";
+
+// Home
+"ms_home_title" = "Songs";
+
+
+// Artist Details
+"ms_artist_details_birth_date" = "Birth Date";
+"ms_artist_details_songs_header" = "Songs";

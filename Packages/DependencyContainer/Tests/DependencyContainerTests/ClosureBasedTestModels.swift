@@ -13,7 +13,6 @@ protocol ClosureBasedProtocol: Sendable {
 
 struct ClosureBasedImplemenation: ClosureBasedProtocol {
     func sampleMethod() {
-
     }
 }
 

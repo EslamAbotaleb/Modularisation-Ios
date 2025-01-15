@@ -19,7 +19,6 @@ final class HomeViewModelTests: XCTestCase {
         homeService = .init()
         analyticsTracker = .init()
     }
-
     override func tearDown() {
         homeService = nil
         analyticsTracker = nil
@@ -80,8 +79,8 @@ final class HomeViewModelTests: XCTestCase {
         let trackedEvent = try XCTUnwrap(analyticsTracker.trackedEvents.first)
         XCTAssertEqual(trackedEvent.name, HomeEventNames.songTappedFromHome)
     }
-    @MainActor
     // MARK: - Utilities
+    @MainActor
     private func makeSUT(onSongSelected: @escaping (Song) -> Void) -> HomeViewModel {
         .init(homeService: homeService, analyticsTracker: analyticsTracker, onSongSelected: onSongSelected)
     }

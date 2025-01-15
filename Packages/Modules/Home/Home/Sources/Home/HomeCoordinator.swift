@@ -10,20 +10,16 @@ import SwiftUI
 import CommonModels
 import SongDetailsInterface
 
+@MainActor
  final class HomeCoordinator {
 
-//     @MainActor
-//      public init() {
-//
-//     }
     //MARK: - initial for navigation controller
-    @MainActor
     private lazy var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         return navigationController
     }()
-    @MainActor
+
     //MARK: - make vc
     func makeViewController() async -> UIViewController {
         let analyticsTracker = await DCSafe.shared.resolve(type: .singleInstance, for: AnalyticsEventTracking.self)
@@ -35,7 +31,6 @@ import SongDetailsInterface
     }
 
     //MARK: - push
-    @MainActor
     func pushSongDetail(_ song: Song)  {
         Task {
             let gateway = await DCSafe.shared.resolve(type: .closureBased, for: SongDetailsInterface.self)

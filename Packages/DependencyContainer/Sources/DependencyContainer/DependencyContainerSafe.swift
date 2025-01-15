@@ -15,7 +15,7 @@ public actor DependencyContainerSafe {
     public static let shared = DependencyContainerSafe()
 
     //MARK: - Single Instance Dependency
-    private var singleInstanceDependencies: [ObjectIdentifier: AnyObject] = [:]
+    private var singleInstanceDependencies: [ObjectIdentifier: Sendable] = [:]
 
     //MARK: - Closure Based Dependency & Any because of we don't know the type maybe be struct || enum || etc
     //Any
@@ -30,12 +30,11 @@ public actor DependencyContainerSafe {
             let objectIdentifier = ObjectIdentifier(interface)
             switch type {
                 case .singleInstance(let instance):
-                    singleInstanceDependencies[objectIdentifier] = instance as AnyObject
+                    singleInstanceDependencies[objectIdentifier] = instance
                 case .closureBased(let closure):
                     closureBasedDependencies[objectIdentifier] = closure
             }
     }
-    
     //MARK: - Resolving Method
     public func resolve<Value>(type: DependencyContainerResolvingType, for interface: Value.Type) async -> Value {
         var value: Value!
@@ -55,5 +54,4 @@ public actor DependencyContainerSafe {
             }
         return value
     }
-    
 }

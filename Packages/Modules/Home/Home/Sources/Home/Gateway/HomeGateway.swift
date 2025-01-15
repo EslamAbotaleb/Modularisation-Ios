@@ -11,7 +11,6 @@ public struct HomeGateway: Sendable {
 
     public init() {}
 
-    @MainActor
     public func makeHomeModule() async -> UIViewController {
         let coordinator = HomeCoordinator()
         return await coordinator.makeViewController()

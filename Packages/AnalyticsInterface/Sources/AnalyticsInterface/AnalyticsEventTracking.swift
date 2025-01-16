@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol AnalyticsEventTracking {
+public protocol AnalyticsEventTracking: Sendable {
     func trackEvent(_ event: AnalyticsEvent)
 }

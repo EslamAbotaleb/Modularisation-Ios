@@ -3,12 +3,6 @@
 
 import PackageDescription
 
-//private let analyticsInterface = "AnalyticsInterface"
-//private let commonModels = "CommonModels"
-//private let dependencyContainer = "DependencyContainer"
-//private let utilities = "Utilities"
-//private let artistDetailInterface = "ArtistDetailInterface"
-//private let songDetailsInterface = "SongDetailsInterface"
 private let sharedDependencies = "SharedDependencies"
 let package = Package(
     name: "SongDetails",
@@ -22,12 +16,6 @@ let package = Package(
     ],
     dependencies: [
         .package(name: sharedDependencies, path: "../../../SharedDependencies")
-//        .package(name: analyticsInterface, path: "../../../\(analyticsInterface)"),
-//        .package(name: commonModels, path: "../../../\(commonModels)"),
-//        .package(name: dependencyContainer, path: "../../../\(dependencyContainer)"),
-//        .package(name: utilities, path: "../../../\(utilities)"),
-//        .package(name: artistDetailInterface, path: "../../ArtistDetail/\(artistDetailInterface)"),
-//        .package(name: songDetailsInterface, path: "../\(songDetailsInterface)"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -36,12 +24,6 @@ let package = Package(
             name: "SongDetails",
             dependencies: [
                 .product(name: sharedDependencies, package: sharedDependencies)
-//                .product(name: analyticsInterface, package: analyticsInterface),
-//                .product(name: commonModels, package: commonModels),
-//                .product(name: dependencyContainer, package: dependencyContainer),
-//                .product(name: utilities, package: utilities),
-//                .product(name: artistDetailInterface, package: artistDetailInterface),
-//                .product(name: songDetailsInterface, package: songDetailsInterface),
             ],
             resources: [
                 .process("Resources")

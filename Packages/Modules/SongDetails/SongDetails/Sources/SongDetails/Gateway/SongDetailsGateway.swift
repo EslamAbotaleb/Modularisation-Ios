@@ -11,7 +11,6 @@ import CommonModels
 
 public struct SongDetailsGateway: SongDetailsInterface {
     public init() {
-
     }
     @MainActor
     public func makeSongDetailsModule(navigationController: UINavigationController?, song: Song) async -> UIViewController {

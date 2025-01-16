@@ -3,13 +3,7 @@
 
 import PackageDescription
 
-private let analyticsInterface = "AnalyticsInterface"
-private let dependencyContainer = "DependencyContainer"
-private var artistDetailInterface = "ArtistDetailInterface"
-private let songDetailsInterface = "SongDetailsInterface"
-
-private let localisation = "Localisation"
-private let commonModels = "CommonModels"
+private let sharedDependencies = "SharedDependencies"
 
 let package = Package(
     name: "ArtistDetail",
@@ -21,12 +15,7 @@ let package = Package(
             targets: ["ArtistDetail"]),
     ],
     dependencies: [
-        .package(name: analyticsInterface, path: "../../../\(analyticsInterface)"),
-        .package(name: commonModels, path: "../../../\(commonModels)"),
-        .package(name: dependencyContainer, path: "../../../\(dependencyContainer)"),
-        .package(name: artistDetailInterface, path: "../\(artistDetailInterface)"),
-        .package(name: songDetailsInterface, path: "../../SongDetails/\(songDetailsInterface)"),
-        .package(name: localisation, path: "../../../\(localisation)")
+        .package(name: sharedDependencies, path: "../../../\(sharedDependencies)"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,12 +23,7 @@ let package = Package(
         .target(
             name: "ArtistDetail",
             dependencies: [
-                .product(name: analyticsInterface, package: analyticsInterface),
-                .product(name: commonModels, package: commonModels),
-                .product(name: dependencyContainer, package: dependencyContainer),
-                .product(name: artistDetailInterface, package: artistDetailInterface),
-                .product(name: songDetailsInterface, package: songDetailsInterface),
-                .product(name: localisation, package: localisation)
+                .product(name: sharedDependencies, package: sharedDependencies),
             ]),
         .testTarget(
             name: "ArtistDetailTests",

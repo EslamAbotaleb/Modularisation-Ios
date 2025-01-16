@@ -13,7 +13,7 @@ public actor AnalyticsEventTrackerMock: @preconcurrency AnalyticsEventTracking {
 
     public init() {}
 
-    public func trackEvent(_ event: AnalyticsEvent) {
-        trackedEvents.append(event)
+     public func trackEvent(_ event: AnalyticsEvent) {
+            trackedEvents.append(event)
     }
 }

@@ -3,11 +3,7 @@
 
 import PackageDescription
 
-private let analyticsInterface = "AnalyticsInterface"
-private let commonModels = "CommonModels"
-private let dependencyContainer = "DependencyContainer"
-private let songDetailsInterface = "SongDetailsInterface"
-private let localisation = "Localisation"
+private let sharedDependencies = "SharedDependencies"
 
 let package = Package(
     name: "Home",
@@ -19,11 +15,7 @@ let package = Package(
             targets: ["Home"]),
     ],
     dependencies: [
-        .package(name: analyticsInterface, path: "../../../\(analyticsInterface)"),
-        .package(name: commonModels, path: "../../../\(commonModels)"),
-        .package(name: dependencyContainer, path: "../../../\(dependencyContainer)"),
-        .package(name: songDetailsInterface, path: "../../SongDetails/\(songDetailsInterface)"),
-        .package(name: localisation, path: "../../../\(localisation)")
+        .package(name: sharedDependencies, path: "../../../\(sharedDependencies)"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -31,11 +23,7 @@ let package = Package(
         .target(
             name: "Home",
             dependencies: [
-                .product(name: analyticsInterface, package: analyticsInterface),
-                .product(name: commonModels, package: commonModels),
-                .product(name: dependencyContainer, package: dependencyContainer),
-                .product(name: songDetailsInterface, package: songDetailsInterface),
-                .product(name: localisation, package: localisation)
+                .product(name: sharedDependencies, package: sharedDependencies),
             ]
         ),
         .testTarget(

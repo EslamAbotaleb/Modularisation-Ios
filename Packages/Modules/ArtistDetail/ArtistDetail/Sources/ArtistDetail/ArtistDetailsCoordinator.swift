@@ -12,7 +12,7 @@ import CommonModels
 import SongDetailsInterface
 
 @MainActor
-final class ArtistDetailsCoordinator {
+final class ArtistDetailsCoordinator: Sendable {
 
     private weak var navigationController: UINavigationController?
 
@@ -20,7 +20,6 @@ final class ArtistDetailsCoordinator {
      init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
-
 
     func makeViewController(artistIdentifier: String) async -> UIViewController {
         let analyticsTracker =  await DCSafe.shared.resolve(type: .singleInstance, for: AnalyticsEventTracking.self)

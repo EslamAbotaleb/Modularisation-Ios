@@ -16,6 +16,7 @@
 		AA6EF5902D367DA6005D9423 /* SongDetails in Frameworks */ = {isa = PBXBuildFile; productRef = AA6EF58F2D367DA6005D9423 /* SongDetails */; };
 		AA6EF5922D367DA6005D9423 /* SongDetailsInterface in Frameworks */ = {isa = PBXBuildFile; productRef = AA6EF5912D367DA6005D9423 /* SongDetailsInterface */; };
 		AAA450CE2D369196004B76EF /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = AAA450CD2D369196004B76EF /* Home */; };
+		AACC8A572D3942390046C85B /* SharedDependencies in Frameworks */ = {isa = PBXBuildFile; productRef = AACC8A562D3942390046C85B /* SharedDependencies */; };
 		AADEA0C22D356EAE0049FAFB /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = AADEA0C12D356EAE0049FAFB /* DependencyContainer */; };
 		AAFA665D2D354D1A00EB04A6 /* ArtistDetailInterface in Frameworks */ = {isa = PBXBuildFile; productRef = AAFA665C2D354D1A00EB04A6 /* ArtistDetailInterface */; };
 		AAFA665F2D354D1F00EB04A6 /* ArtistDetail in Frameworks */ = {isa = PBXBuildFile; productRef = AAFA665E2D354D1F00EB04A6 /* ArtistDetail */; };
@@ -39,6 +40,7 @@
 		AA979EAD2D354CCD0097AA5A /* ArtistDetail */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ArtistDetail; sourceTree = "<group>"; };
 		AA979EAE2D354CE90097AA5A /* ArtistDetailInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ArtistDetailInterface; sourceTree = "<group>"; };
 		AAA450CC2D369182004B76EF /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
+		AACC8A552D3942290046C85B /* SharedDependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedDependencies; sourceTree = "<group>"; };
 		AADEA0C32D3577F40049FAFB /* DependencyContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DependencyContainer; sourceTree = "<group>"; };
 		FBA9D05B2B7B936A00FDF616 /* ModularisationStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModularisationStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA9D05E2B7B936A00FDF616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACC8A572D3942390046C85B /* SharedDependencies in Frameworks */,
 				AA5553362D379EB6009E54A8 /* Localisation in Frameworks */,
 				AA4F38ED2D3512630036BE2A /* Analytics in Frameworks */,
 				AA6EF5902D367DA6005D9423 /* SongDetails in Frameworks */,
@@ -76,6 +79,7 @@
 		AA0A663B2D33B45E00037C8E /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				AACC8A552D3942290046C85B /* SharedDependencies */,
 				AADEA0C32D3577F40049FAFB /* DependencyContainer */,
 				AA4F38F32D351AC70036BE2A /* Utilities */,
 				AA4F38EB2D3512310036BE2A /* Analytics */,
@@ -513,6 +517,10 @@
 		AAA450CD2D369196004B76EF /* Home */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Home;
+		};
+		AACC8A562D3942390046C85B /* SharedDependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedDependencies;
 		};
 		AADEA0C12D356EAE0049FAFB /* DependencyContainer */ = {
 			isa = XCSwiftPackageProductDependency;

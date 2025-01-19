@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol AnalyticsEventTracking: Sendable {
-    func trackEvent(_ event: AnalyticsEvent)
+     func trackEvent(_ event: AnalyticsEvent)
 }

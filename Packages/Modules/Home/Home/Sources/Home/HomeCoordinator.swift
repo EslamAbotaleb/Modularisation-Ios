@@ -11,7 +11,7 @@ import CommonModels
 import SongDetailsInterface
 
 @MainActor
- final class HomeCoordinator {
+final class HomeCoordinator: Sendable {
 
     //MARK: - initial for navigation controller
     private lazy var navigationController: UINavigationController = {
@@ -33,6 +33,7 @@ import SongDetailsInterface
     //MARK: - push
     func pushSongDetail(_ song: Song)  {
         Task {
+            //MARK: - resolve first before to go into song details
             let gateway = await DCSafe.shared.resolve(type: .closureBased, for: SongDetailsInterface.self)
 //            let coordinator = SongDetailsCoordinator(navigationController: navigationController)
             let songDetailView =  await gateway.makeSongDetailsModule(navigationController: navigationController, song: song)

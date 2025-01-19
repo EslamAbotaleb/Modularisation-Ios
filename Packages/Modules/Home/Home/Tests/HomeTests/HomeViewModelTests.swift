@@ -68,17 +68,37 @@ final class HomeViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 1.0)
     }
     @MainActor
-    func test_song_selection_is_tracked() throws {
+    func test_song_selection_is_tracked() async throws {
         let sut = makeSUT { _ in
-            // ignore song selection for this test case
+            // Ignore song selection for this test case
         }
-
         sut.didSelectSong(makeSong())
 
-        XCTAssertEqual(1, analyticsTracker.trackedEvents.count)
-        let trackedEvent = try XCTUnwrap(analyticsTracker.trackedEvents.first)
+        let trackedEvents = await analyticsTracker.trackedEvents
+        XCTAssertEqual(1, trackedEvents.count)
+
+        // Unwrap and assert the event details
+        let trackedEvent = try XCTUnwrap(trackedEvents.first)
         XCTAssertEqual(trackedEvent.name, HomeEventNames.songTappedFromHome)
     }
+    /*
+     func test_song_selection_is_tracked()  throws {
+     Task {
+     @MainActor in
+     let sut = makeSUT { _ in
+     // ignore song selection for this test case
+     }
+     sut.didSelectSong(makeSong())
+     }
+     //MainActor.assertIsolated
+
+     XCTAssertEqual(1, analyticsTracker.trackedEvents.count)
+     let trackedEvent = try XCTUnwrap(analyticsTracker.trackedEvents.first)
+
+     XCTAssertEqual(trackedEvent.name, HomeEventNames.songTappedFromHome)
+     }
+     */
+
     // MARK: - Utilities
     @MainActor
     private func makeSUT(onSongSelected: @escaping (Song) -> Void) -> HomeViewModel {
@@ -89,3 +109,4 @@ final class HomeViewModelTests: XCTestCase {
         .init(id: "1", name: "test", artistName: "test", artistIdentifier: "1", lyrics: "test")
     }
 }
+

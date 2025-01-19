@@ -11,7 +11,7 @@ import Home
 final class RootCoordinator {
     func makeInitialView() async -> UIViewController {
         let gateway = HomeGateway()
-        let homeView =  await gateway.makeHomeModule()
+        let homeView = await gateway.makeHomeModule()
         let tabBarController = await RootTabBarController(viewControllers: [homeView])
         return tabBarController
     }

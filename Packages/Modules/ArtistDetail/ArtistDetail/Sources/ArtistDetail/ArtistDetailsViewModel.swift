@@ -40,7 +40,7 @@ final class ArtistDetailsViewModel: ObservableObject {
         didCallOnAppearForTheFirstTime = true
          fetchArtist() 
     }
-
+    @MainActor
     func didSelectSong(_ song: Song) {
         analyticsTracker.trackEvent(.init(name: ArtistDetailsEventNames.songTappedFromArtistDetail))
         onSongSelected(song)

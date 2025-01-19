@@ -16,8 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         Task {
-            window.rootViewController = await RootCoordinator().makeInitialView()
-            window.makeKeyAndVisible()
+            // Await the root view controller setup asynchronously
+            let rootViewController = await RootCoordinator().makeInitialView()
+            await MainActor.run {
+                window.rootViewController = rootViewController
+                window.makeKeyAndVisible()
+            }
         }
     }
 

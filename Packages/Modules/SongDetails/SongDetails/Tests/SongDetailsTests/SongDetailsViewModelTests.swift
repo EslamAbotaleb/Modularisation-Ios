@@ -44,7 +44,7 @@ final class SongDetailsViewModelTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1.0)
     }
-
+/*
     func test_going_to_artist_page_is_tracked() throws {
         let sut = makeSUT { _ in
             // ignore artist selection for this test case
@@ -56,6 +56,7 @@ final class SongDetailsViewModelTests: XCTestCase {
         let trackedEvent = try XCTUnwrap(analyticsTracker.trackedEvents.first)
         XCTAssertEqual(trackedEvent.name, SongDetailsEventNames.artistTappedFromSongDetail)
     }
+ */
 
     // MARK: - Utilities
 

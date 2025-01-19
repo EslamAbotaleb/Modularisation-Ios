@@ -26,7 +26,7 @@ final class ArtistDetailsViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    @MainActor func test_artist_details_are_fetched_when_view_is_appeared_for_the_first_time() async {
+    @MainActor  func test_artist_details_are_fetched_when_view_is_appeared_for_the_first_time() async {
         let expectation = XCTestExpectation()
         artistService.fetchArtistExpectation = expectation
         let sut = makeSUT { _ in
@@ -70,21 +70,23 @@ final class ArtistDetailsViewModelTests: XCTestCase {
 
         wait(for: [expectation], timeout: 1.0)
     }
-
-    @MainActor func test_song_selection_is_tracked() throws {
+    @MainActor
+    func test_song_selection_is_tracked() async throws {
         let sut = makeSUT { _ in
             // ignore song selection for this test case
         }
 
-        sut.didSelectSong(makeSong())
+         sut.didSelectSong(makeSong())
 
-        XCTAssertEqual(1, analyticsTracker.trackedEvents.count)
-        let trackedEvent = try XCTUnwrap(analyticsTracker.trackedEvents.first)
+        let trackedEvents = await analyticsTracker.trackedEvents
+        XCTAssertEqual(1, trackedEvents.count)
+
+        let trackedEvent = try XCTUnwrap(trackedEvents.first)
         XCTAssertEqual(trackedEvent.name, ArtistDetailsEventNames.songTappedFromArtistDetail)
     }
 
     // MARK: - Utilities
-    @MainActor
+
     private func makeSUT(onSongSelected: @escaping (Song) -> Void) -> ArtistDetailsViewModel {
             .init(artistService: artistService, analyticsTracker: analyticsTracker, artistIdentifier: "1", onSongSelected: onSongSelected)
     }

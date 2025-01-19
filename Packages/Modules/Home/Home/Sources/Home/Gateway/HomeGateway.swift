@@ -13,6 +13,7 @@ public struct HomeGateway: Sendable {
 
     public func makeHomeModule() async -> UIViewController {
         let coordinator = HomeCoordinator()
+        //MARK: - display the home view
         return await coordinator.makeViewController()
     }
 }

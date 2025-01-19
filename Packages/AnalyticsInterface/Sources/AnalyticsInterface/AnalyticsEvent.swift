@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-
-
 public struct AnalyticsEvent: Sendable {
     public let name: String
     public let parameters: [String: String]?

@@ -34,7 +34,6 @@ final class SongDetailsViewModel {
     }
 
     // MARK: - Actions
-
     func didTapGoToArtist() {
         analyticsTracker.trackEvent(.init(name: SongDetailsEventNames.artistTappedFromSongDetail))
         onGoToArtistTapped(song.artistIdentifier)

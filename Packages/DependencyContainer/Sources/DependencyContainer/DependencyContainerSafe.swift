@@ -19,6 +19,7 @@ public actor DependencyContainerSafe {
 
     //MARK: - Closure Based Dependency & Any because of we don't know the type maybe be struct || enum || etc
     //Any
+    //ObjectIdentifier allow us to register our types our protocols
     private var closureBasedDependencies: [ObjectIdentifier: () async -> Sendable] = [:]
 
     // Internal initial for only inside the package

@@ -11,14 +11,16 @@ import CommonModels
 import ArtistDetailInterface
 
 @MainActor
-final class SongDetailsCoordinator: Sendable {
+final class SongDetailsCoordinator {
 
     private weak var navigationController: UINavigationController?
 
+    //MARK: - init navigation controller
     init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
 
+    //MARK: - make type vc
     func makeViewController(with song: Song) async -> UIViewController {
         let analyticsTracker = await DCSafe.shared.resolve(type: .singleInstance, for: AnalyticsEventTracking.self)
         let viewModel = SongDetailsViewModel(song: song, analyticsTracker: analyticsTracker, onGoToArtistTapped: pushArtistDetail(withIdentifier:))
@@ -28,6 +30,7 @@ final class SongDetailsCoordinator: Sendable {
         return hostingVC
     }
 
+    //MARK: - push
     private func pushArtistDetail(withIdentifier id: String)  {
         Task {
             let gateway = await DCSafe.shared.resolve(type: .closureBased, for: ArtistDetailInterface.self)

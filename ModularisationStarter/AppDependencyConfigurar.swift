@@ -14,6 +14,10 @@ import SongDetailsInterface
 import SongDetails
 
 enum AppDependencyConfigurar {
+/*
+
+ Passing argument of non-sendable type 'DependencyContainerRegistrationType' into actor-isolated context may introduce data races; this is an error in the Swift 6 language mode
+ */
     // This func for registering all our dependencies, in the our project
      static func configure() {
         Task {

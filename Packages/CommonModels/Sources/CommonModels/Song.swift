@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Song: Codable,Hashable, Sendable {
+public struct Song: Codable,Hashable, Sendable, Identifiable {
     public let id: String
     public let name: String
     public let artistName: String

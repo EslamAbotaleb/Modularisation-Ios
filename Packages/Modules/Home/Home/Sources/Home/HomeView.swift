@@ -20,7 +20,7 @@ struct HomeView: View {
                 ProgressView()
             } else {
                 List {
-                    ForEach(viewModel.songs, id: \.self) { song in
+                    ForEach(viewModel.songs) { song in
                         Text(song.name)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .contentShape(Rectangle())
@@ -41,5 +41,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: .init(homeService: HomeServicePreviewMock(), analyticsTracker: AnalyticsEventTrackerMock(), onSongSelected: { _ in }))
+    HomeView(viewModel: .init(homeService: HomeService(), analyticsTracker: AnalyticsEventTrackerMock(), onSongSelected: { _ in }))
 }

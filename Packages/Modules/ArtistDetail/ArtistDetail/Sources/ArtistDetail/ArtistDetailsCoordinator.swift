@@ -12,10 +12,9 @@ import CommonModels
 import SongDetailsInterface
 
 @MainActor
-final class ArtistDetailsCoordinator: Sendable {
+final class ArtistDetailsCoordinator {
 
     private weak var navigationController: UINavigationController?
-
 
      init(navigationController: UINavigationController?) {
         self.navigationController = navigationController

@@ -11,16 +11,16 @@ import CommonModels
 import SongDetailsInterface
 
 @MainActor
-final class HomeCoordinator: Sendable {
+final class HomeCoordinator {
 
-    //MARK: - initial for navigation controller
+    //MARK: - Initial for navigation controller
     private lazy var navigationController: UINavigationController = {
         let navigationController = UINavigationController()
         navigationController.navigationBar.prefersLargeTitles = true
         return navigationController
     }()
 
-    //MARK: - make vc
+    //MARK: - Make vc
     func makeViewController() async -> UIViewController {
         let analyticsTracker = await DCSafe.shared.resolve(type: .singleInstance, for: AnalyticsEventTracking.self)
         let viewModel = HomeViewModel(homeService: HomeService(), analyticsTracker: analyticsTracker, onSongSelected: pushSongDetail(_:))
@@ -30,12 +30,11 @@ final class HomeCoordinator: Sendable {
         return navigationController
     }
 
-    //MARK: - push
+    //MARK: - Push
     func pushSongDetail(_ song: Song)  {
         Task {
             //MARK: - resolve first before to go into song details
             let gateway = await DCSafe.shared.resolve(type: .closureBased, for: SongDetailsInterface.self)
-//            let coordinator = SongDetailsCoordinator(navigationController: navigationController)
             let songDetailView =  await gateway.makeSongDetailsModule(navigationController: navigationController, song: song)
             navigationController.pushViewController(songDetailView, animated: true)
         }

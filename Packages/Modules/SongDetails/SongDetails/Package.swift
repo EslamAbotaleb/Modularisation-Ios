@@ -15,7 +15,7 @@ let package = Package(
             targets: ["SongDetails"]),
     ],
     dependencies: [
-        .package(name: sharedDependencies, path: "../../../SharedDependencies"),
+        .package(name: sharedDependencies, path: "../../../SharedDependencies")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -24,6 +24,7 @@ let package = Package(
             name: "SongDetails",
             dependencies: [
                 .product(name: sharedDependencies, package: sharedDependencies)
+
             ],
             resources: [
                 .process("Resources")

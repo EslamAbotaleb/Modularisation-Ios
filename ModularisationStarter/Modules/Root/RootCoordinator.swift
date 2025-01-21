@@ -8,11 +8,12 @@
 import UIKit
 import Home
 
-final class RootCoordinator {
-    func makeInitialView() async -> UIViewController {
+@MainActor
+final class RootCoordinator: Sendable {
+    func makeInitialView()  -> UIViewController {
         let gateway = HomeGateway()
-        let homeView = await gateway.makeHomeModule()
-        let tabBarController = await RootTabBarController(viewControllers: [homeView])
+        let homeView =  gateway.makeHomeModule()
+        let tabBarController =  RootTabBarController(viewControllers: [homeView])
         return tabBarController
     }
 }

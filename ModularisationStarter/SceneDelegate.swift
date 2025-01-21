@@ -15,12 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        Task {
-            @MainActor in
-            let rootViewController =  await RootCoordinator().makeInitialView()
+            let rootViewController = RootCoordinator().makeInitialView()
                 window.rootViewController = rootViewController
                 window.makeKeyAndVisible()
-        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

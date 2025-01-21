@@ -22,7 +22,8 @@ enum AppDependencyConfigurar {
             await DCSafe.shared.register(type: .singleInstance(analyticsTracker), for: AnalyticsEventTracking.self)
 
             //Song
-            let songDetailsClosure: @Sendable () -> SongDetailsInterface = {
+            let songDetailsClosure: @Sendable () -> SongDetailsInterface =
+            {
                 SongDetailsGateway()
             }
             /// Closure based here will create every time new instance from dependency

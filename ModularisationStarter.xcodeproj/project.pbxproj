@@ -13,11 +13,11 @@
 		AA4F38F12D3516CA0036BE2A /* CommonModels in Frameworks */ = {isa = PBXBuildFile; productRef = AA4F38F02D3516CA0036BE2A /* CommonModels */; };
 		AA4F38F52D351ADC0036BE2A /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = AA4F38F42D351ADC0036BE2A /* Utilities */; };
 		AA5553362D379EB6009E54A8 /* Localisation in Frameworks */ = {isa = PBXBuildFile; productRef = AA5553352D379EB6009E54A8 /* Localisation */; };
+		AA60A5312D3FC76C00A15E2E /* DependencyContainer.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA60A52F2D3FC76C00A15E2E /* DependencyContainer.xcframework */; };
 		AA6EF5902D367DA6005D9423 /* SongDetails in Frameworks */ = {isa = PBXBuildFile; productRef = AA6EF58F2D367DA6005D9423 /* SongDetails */; };
 		AA6EF5922D367DA6005D9423 /* SongDetailsInterface in Frameworks */ = {isa = PBXBuildFile; productRef = AA6EF5912D367DA6005D9423 /* SongDetailsInterface */; };
 		AAA450CE2D369196004B76EF /* Home in Frameworks */ = {isa = PBXBuildFile; productRef = AAA450CD2D369196004B76EF /* Home */; };
 		AACC8A572D3942390046C85B /* SharedDependencies in Frameworks */ = {isa = PBXBuildFile; productRef = AACC8A562D3942390046C85B /* SharedDependencies */; };
-		AADEA0C22D356EAE0049FAFB /* DependencyContainer in Frameworks */ = {isa = PBXBuildFile; productRef = AADEA0C12D356EAE0049FAFB /* DependencyContainer */; };
 		AAFA665D2D354D1A00EB04A6 /* ArtistDetailInterface in Frameworks */ = {isa = PBXBuildFile; productRef = AAFA665C2D354D1A00EB04A6 /* ArtistDetailInterface */; };
 		AAFA665F2D354D1F00EB04A6 /* ArtistDetail in Frameworks */ = {isa = PBXBuildFile; productRef = AAFA665E2D354D1F00EB04A6 /* ArtistDetail */; };
 		FBA9D05F2B7B936A00FDF616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA9D05E2B7B936A00FDF616 /* AppDelegate.swift */; };
@@ -35,13 +35,13 @@
 		AA4F38EF2D3516970036BE2A /* CommonModels */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CommonModels; sourceTree = "<group>"; };
 		AA4F38F32D351AC70036BE2A /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
 		AA5553342D379E95009E54A8 /* Localisation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Localisation; sourceTree = "<group>"; };
+		AA60A52F2D3FC76C00A15E2E /* DependencyContainer.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = DependencyContainer.xcframework; sourceTree = "<group>"; };
 		AA6EF58D2D3664E7005D9423 /* SongDetailsInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SongDetailsInterface; sourceTree = "<group>"; };
 		AA6EF58E2D367D88005D9423 /* SongDetails */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SongDetails; sourceTree = "<group>"; };
 		AA979EAD2D354CCD0097AA5A /* ArtistDetail */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ArtistDetail; sourceTree = "<group>"; };
 		AA979EAE2D354CE90097AA5A /* ArtistDetailInterface */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ArtistDetailInterface; sourceTree = "<group>"; };
 		AAA450CC2D369182004B76EF /* Home */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Home; sourceTree = "<group>"; };
 		AACC8A552D3942290046C85B /* SharedDependencies */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedDependencies; sourceTree = "<group>"; };
-		AADEA0C32D3577F40049FAFB /* DependencyContainer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DependencyContainer; sourceTree = "<group>"; };
 		FBA9D05B2B7B936A00FDF616 /* ModularisationStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModularisationStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBA9D05E2B7B936A00FDF616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBA9D0602B7B936A00FDF616 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,9 +64,9 @@
 				AA6EF5902D367DA6005D9423 /* SongDetails in Frameworks */,
 				AA4F38F12D3516CA0036BE2A /* CommonModels in Frameworks */,
 				AAA450CE2D369196004B76EF /* Home in Frameworks */,
-				AADEA0C22D356EAE0049FAFB /* DependencyContainer in Frameworks */,
 				AAFA665D2D354D1A00EB04A6 /* ArtistDetailInterface in Frameworks */,
 				AA4F38F52D351ADC0036BE2A /* Utilities in Frameworks */,
+				AA60A5312D3FC76C00A15E2E /* DependencyContainer.xcframework in Frameworks */,
 				AAFA665F2D354D1F00EB04A6 /* ArtistDetail in Frameworks */,
 				AA6EF5922D367DA6005D9423 /* SongDetailsInterface in Frameworks */,
 				AA4F38E82D3503A60036BE2A /* AnalyticsInterface in Frameworks */,
@@ -80,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				AACC8A552D3942290046C85B /* SharedDependencies */,
-				AADEA0C32D3577F40049FAFB /* DependencyContainer */,
 				AA4F38F32D351AC70036BE2A /* Utilities */,
 				AA4F38EB2D3512310036BE2A /* Analytics */,
 				AA4F38E62D3503610036BE2A /* AnalyticsInterface */,
@@ -89,13 +88,6 @@
 				AA4F38F62D352BD60036BE2A /* Modules */,
 			);
 			path = Packages;
-			sourceTree = "<group>";
-		};
-		AA4F38DC2D34FFFA0036BE2A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AA4F38F62D352BD60036BE2A /* Modules */ = {
@@ -115,6 +107,14 @@
 				AA979EAE2D354CE90097AA5A /* ArtistDetailInterface */,
 			);
 			path = ArtistDetail;
+			sourceTree = "<group>";
+		};
+		AA60A5302D3FC76C00A15E2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA60A52F2D3FC76C00A15E2E /* DependencyContainer.xcframework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		AAA450CB2D368B30004B76EF /* Home */ = {
@@ -140,7 +140,7 @@
 				FBE2717F2B8F46E400652C5C /* ModularisationStarter.xctestplan */,
 				AA0A663B2D33B45E00037C8E /* Packages */,
 				FBA9D05D2B7B936A00FDF616 /* ModularisationStarter */,
-				AA4F38DC2D34FFFA0036BE2A /* Frameworks */,
+				AA60A5302D3FC76C00A15E2E /* Frameworks */,
 				FBA9D05C2B7B936A00FDF616 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -408,6 +408,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TPUZWA3Q98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Packages",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ModularisationStarter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -424,6 +428,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -439,6 +444,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TPUZWA3Q98;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Packages",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ModularisationStarter/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -455,6 +464,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -521,10 +531,6 @@
 		AACC8A562D3942390046C85B /* SharedDependencies */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedDependencies;
-		};
-		AADEA0C12D356EAE0049FAFB /* DependencyContainer */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DependencyContainer;
 		};
 		AAFA665C2D354D1A00EB04A6 /* ArtistDetailInterface */ = {
 			isa = XCSwiftPackageProductDependency;

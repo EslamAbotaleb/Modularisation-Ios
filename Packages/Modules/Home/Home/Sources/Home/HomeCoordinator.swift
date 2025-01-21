@@ -22,12 +22,17 @@ final class HomeCoordinator {
     }()
 
     //MARK: - Make vc
-    func makeViewController() async -> UIViewController {
-        let analyticsTracker = await DCSafe.shared.resolve(type: .singleInstance, for: AnalyticsEventTracking.self)
-        let viewModel = HomeViewModel(homeService: HomeService(), analyticsTracker: analyticsTracker, onSongSelected: pushSongDetail(_:))
-        let homeView = HomeView(viewModel: viewModel)
-        let hostingVC =  UIHostingController(rootView: homeView)
-         navigationController.setViewControllers([hostingVC], animated: false)
+    func makeViewController() -> UIViewController {
+        // You can use a Task to wrap async code in a synchronous method
+        Task {
+            let analyticsTracker = await DCSafe.shared.resolve(type: .singleInstance, for: AnalyticsEventTracking.self)
+            let viewModel = HomeViewModel(homeService: HomeService(), analyticsTracker: analyticsTracker, onSongSelected: pushSongDetail(_:))
+            let homeView = HomeView(viewModel: viewModel)
+            let hostingVC = UIHostingController(rootView: homeView)
+            navigationController.setViewControllers([hostingVC], animated: false)
+        }
+
+        // Return the navigationController synchronously
         return navigationController
     }
 

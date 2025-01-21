@@ -1,0 +1,15 @@
+# macOS system files
+.DS_Store
+
+# Xcode user-specific files
+*.xcuserstate
+
+# Node.js dependencies
+node_modules/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Build artifacts
+/build/

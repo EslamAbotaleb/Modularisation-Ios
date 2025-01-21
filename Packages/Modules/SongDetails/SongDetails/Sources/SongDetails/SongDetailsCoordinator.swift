@@ -10,8 +10,9 @@ import SwiftUI
 import CommonModels
 import ArtistDetailInterface
 
-@MainActor
-final class SongDetailsCoordinator {
+@MainActor class SongDetailsCoordinatorActor {}
+
+final class SongDetailsCoordinator: SongDetailsCoordinatorActor, Sendable {
 
     private weak var navigationController: UINavigationController?
 

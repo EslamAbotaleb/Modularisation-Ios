@@ -10,9 +10,8 @@ import SwiftUI
 import CommonModels
 import SongDetailsInterface
 
-
-@MainActor
-final class HomeCoordinator: Sendable {
+@MainActor class HomeCoordinatorActor {}
+final class HomeCoordinator: HomeCoordinatorActor, Sendable {
 
     //MARK: - Initial for navigation controller
     private lazy var navigationController: UINavigationController = {
@@ -31,7 +30,6 @@ final class HomeCoordinator: Sendable {
             let hostingVC = UIHostingController(rootView: homeView)
             navigationController.setViewControllers([hostingVC], animated: false)
         }
-
         // Return the navigationController synchronously
         return navigationController
     }

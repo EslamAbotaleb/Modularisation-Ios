@@ -8,8 +8,8 @@
 import UIKit
 import Home
 
-@MainActor
-final class RootCoordinator: Sendable {
+@MainActor class RootCoordinatorActor {}
+final class RootCoordinator:RootCoordinatorActor, Sendable {
     func makeInitialView()  -> UIViewController {
         let gateway = HomeGateway()
         let homeView =  gateway.makeHomeModule()

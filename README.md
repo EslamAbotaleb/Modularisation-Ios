@@ -57,29 +57,3 @@ The `Modules` directory contains the core features of the application, each impl
 *   **Coordinator Pattern:** The Coordinator pattern is used for navigation, keeping view controllers lean and focused on presentation.
 *   **MVVM (Model-View-ViewModel):** The MVVM pattern is used for structuring the UI logic within modules.
 *   **Gateway Pattern:** The Gateway pattern is used to abstract data access logic.
-
- 
- # Build for iOS device
-xcodebuild build \
-  -scheme <SchemeName> \  # Replace <SchemeName> with your actual scheme name
-  -sdk iphoneos \
-  -configuration Release \
-  BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-  -destination 'generic/platform=iOS' \
-  -derivedDataPath <DerivedDataPath>/iphoneos  # Replace <DerivedDataPath> with your desired path
-
-# Build for iOS simulator
-xcodebuild build \
-  -scheme <SchemeName> \  # Replace <SchemeName> with your actual scheme name
-  -sdk iphonesimulator \
-  -configuration Release \
-  BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
-  -destination 'generic/platform=iOS Simulator' \
-  -derivedDataPath <DerivedDataPath>/iphonesimulator  # Replace <DerivedDataPath> with your desired path
-
-  # Create an XCFramework
-xcodebuild -create-xcframework \
-  -framework <DerivedDataPath>/iphoneos/Build/Products/Release-iphoneos/<FrameworkName>.framework \  # Replace <DerivedDataPath> and <FrameworkName>
-  -framework <DerivedDataPath>/iphonesimulator/Build/Products/Release-iphonesimulator/<FrameworkName>.framework \  # Replace <DerivedDataPath> and <FrameworkName>
-  -output <OutputPath>/<XCFrameworkName>.xcframework  # Replace <OutputPath> and <XCFrameworkName>
-
